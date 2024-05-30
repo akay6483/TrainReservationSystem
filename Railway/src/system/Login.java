@@ -1,34 +1,15 @@
-package login;
+package system;
+
 import java.util.Scanner;
 
-public class MenuDrivenProgram {
+public class Login {
     private static final int MAX_USERS = 100;
     private static String[] usernames = new String[MAX_USERS];
     private static String[] passwords = new String[MAX_USERS];
     private static int userCount = 0;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("\nMain Menu");
-            System.out.println("1. Login");
-            System.out.println("2. Exit");
-            System.out.print("Please select an option: ");
-            String choice = scanner.nextLine();
-
-            if (choice.equals("1")) {
-                loginMenu(scanner);
-            } else if (choice.equals("2")) {
-                System.out.println("Exiting the program. Goodbye!");
-                break;
-            } else {
-                System.out.println("Invalid choice. Please try again.");
-            }
-        }
-        scanner.close();
-    }
-
-    private static void loginMenu(Scanner scanner) {
+   
+    public static void loginMenu(Scanner scanner) {
         while (true) {
             System.out.println("\nLogin Menu");
             System.out.println("1. Sign In");
