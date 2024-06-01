@@ -3,6 +3,7 @@ package Data;
 public class Details {
 	
 	public static Station[] stationArray;
+	public static Train[] trainArray;
 	
 	public static void initializeData()
 	{
@@ -53,9 +54,11 @@ public class Details {
 		String arrivalTimeTwo[] = {"6:10 AM","7:23 AM","8:34 AM","9:20 AM","10:55 AM","12:26 PM","2:00 PM","4:20 PM","6:28 PM","7:57 PM"};
 		String departureTimeTwo[] = {"6:15 AM","7:26 AM","8:36 AM","9:23 AM","11:00 AM","12:28 PM","2:05 PM","5:00 PM","6:29 PM","7:58 PM"};
 		
-		Train[] trainArray = new Train[5];
+		trainArray = new Train[2];
 		trainArray[0] = new Train(1,"Kasargod Vande Bharat Express","Thiruvananthapuram Central","Kasargod",300,10,coachSeatsOne,stationStopOne,departureTimeOne,arrivalTimeOne,3.14);
 		trainArray[1] = new Train(2,"Parasuram Express","Thiruvananthapuram Central","Kasargod",800,15,coachSeatsTwo,stationStopTwo,departureTimeTwo,arrivalTimeTwo,1.58);
+		
+		
 	}
 
 }

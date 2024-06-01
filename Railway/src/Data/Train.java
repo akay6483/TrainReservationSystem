@@ -26,6 +26,35 @@ public class Train {
 	        this.arrivalTime = arrivalTime;
 	        this.farePerKm = farePerKm;
 	    }
-	   
+	    
+	    public boolean[] getStationStop()
+	    {
+	    	return this.stationStop;
+	    }
+	    public int getTrainNumber()
+	    {
+	    	return this.trainNumber;
+	    }
+	    public String getTrainName()
+	    {
+	    	return this.trainName;
+	    }
+	    public int getCoachNumber()
+	    {
+	    	return this.coachNumber;
+	    }
+	    public String[][] getCoachSeats()
+	    {
+	    	return this.coachSeats;
+	    }
+	    public String getArrivalTime(int no)
+	    {
+	    	return this.arrivalTime[no+1];
+	    }
+	    public String getDepartureTime(int no)
+	    {
+	    	return this.departureTime[no+1];
+	    }
+	    
 }
 
