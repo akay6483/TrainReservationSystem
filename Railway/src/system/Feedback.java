@@ -14,7 +14,7 @@ public class Feedback {
         rating = scanner.nextInt();
     	
         System.out.println("Please provide your feedback for the train reservation system:");
-        feedback = scanner.next();
+        feedback = scanner.nextLine();
            
         while (rating < 1 || rating > 5) {
             System.out.println("Invalid rating. Please rate your experience from 1 to 5 stars:");

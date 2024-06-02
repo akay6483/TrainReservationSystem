@@ -13,13 +13,16 @@ public class Portal {
 	        Details.initializeData();
 	        
 	        while (true) {
-	            System.out.println("\nMain Menu");
+	        	System.out.println("\n-------------------------");
+	            System.out.println("Main Menu");
+	            System.out.println("-------------------------");
 	            System.out.println("1. Login");
 	            System.out.println("2. Book Ticket");
-	            System.out.println("3. Make Payment");
+	            System.out.println("3. Reservation Status");
 	            System.out.println("4. Feedback");
 	            System.out.println("5. Exit");
-	            System.out.print("Please select an option: ");
+	            System.out.println("Please select an option: ");
+	            System.out.println("-------------------------");
 	            String choice = scanner.nextLine();
 
 	            if (choice.equals("1")) {

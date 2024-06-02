@@ -10,8 +10,8 @@ import Data.Details;
 public class Booking extends Details{
 	
 	static int choice;
-	static String departureStation;
-	static String arrivalStation;
+	static int departureStation;
+	static int arrivalStation;
 	static String[] availableTrain;
 	static int selectedTrain;
 	static int selectedCompartment;
@@ -24,15 +24,13 @@ public class Booking extends Details{
 		System.out.println("=========================");
 		displayStation();
 		choice = scanner.nextInt();
-		
-		departureStation = stationArray.get(choice-1).stationNo;
+		departureStation = choice-1;
 		
 		System.out.println("Select ending station");
 		System.out.println("=========================");
 		displayStation();
 		choice = scanner.nextInt();
-		
-		arrivalStation = stationArray.get(choice-1).stationNo;
+		arrivalStation = choice-1;
 		
 		System.out.println("Select train");
 		System.out.println("=========================");
@@ -40,7 +38,7 @@ public class Booking extends Details{
 		choice = scanner.nextInt();
 		selectedTrain = choice-1;
 			
-		System.out.println("Select compartment : "+ "0 - "+trainArray.get(choice-1).getCoachNumber());
+		System.out.println("Select compartment : "+ "0 - "+trainArray.get(selectedTrain).getCoachNumber());
 		System.out.println("=========================");
 		selectedCompartment = scanner.nextInt();
 		
@@ -49,17 +47,19 @@ public class Booking extends Details{
 		displaySeats();
 		selectedSeat = scanner.next();
 		
-		System.out.println("Booked Ticket Successfully! ");;
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("Ticket Reserved Successfully! ");
         System.out.println("1. Proceed to Payment");
         System.out.println("2. Return to main menu");
-        System.out.print("Please select an option: ");
+        System.out.println("Please select an option: ");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         
         String opt = scanner.next();
         
         if (opt.equals("1")) {
             Payment.makePayment(scanner);
         } else if (opt.equals("2")) {
-            Payment.makePayment(scanner);
+           System.out.println("");
         }else {
             System.out.println("Invalid choice. Please try again.");
         }

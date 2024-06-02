@@ -7,10 +7,12 @@ public class Login {
  
     public static void loginMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\nLogin Menu");
+        	System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("Login Menu");
             System.out.println("1. Login as admin");
             System.out.println("2. Login as passanger");
             System.out.println("3. Return to main menu");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
             String choice = scanner.nextLine();
             
             if (choice.equals("1")) {
@@ -21,6 +23,7 @@ public class Login {
             	break;
             }else {
             	System.out.println("Invalid choice. Please try again.");
+            	break;
             }
           
         }

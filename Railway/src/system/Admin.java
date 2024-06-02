@@ -14,6 +14,7 @@ public class Admin extends Details{
         
         if (ADMIN_PASSWORD.equals(adminPassword)) {
             while (true) {
+            	System.out.println("-------------------------");
                 System.out.println("1. Add Station");
                 System.out.println("2. Delete Station");
                 System.out.println("3. Add Train");
@@ -22,6 +23,7 @@ public class Admin extends Details{
                 System.out.println("6. Display Train");
                 System.out.println("7. Logout");
                 System.out.print("Enter your choice: ");
+                System.out.println("-------------------------");
                 int adminChoice = scanner.nextInt();
 
                 switch (adminChoice) 
