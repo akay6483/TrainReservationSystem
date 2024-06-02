@@ -6,30 +6,28 @@ import system.User;
 public class Payment extends Booking {
 	static String choice;
 	private static double totalFair;
+	private static boolean paymentStatus;
 	
 	public static void makePayment(Scanner scanner)
 	{
+		displayReservation();
 		System.out.println("Payment portal");
 		System.out.println("=========================");
-        System.out.println("1. Display Reservations Details");
-        System.out.println("2. Confirm Payment");
-        System.out.println("3. Cancel Reservation");
+        System.out.println("1. Confirm Payment");
+        System.out.println("2. Cancel Payment");
         System.out.println("=========================");
 		choice = scanner.next();
 		
 		if (choice.equals("1")) {
-            displayReservation();
+			debitAmount();
         } else if (choice.equals("2")) {
-            debitAmount();
-        } else if (choice.equals("3")) {
-        	cancelReservation();  
-        }else
-        {
+        	cancelPayment();
+        } else {
         	System.out.println("Invalid choice. Please try again.");
         }
 	}
 	
-	private static void displayReservation()
+	public static void displayReservation()
 	{
 		System.out.println("---------------------------------------------------");
 		
@@ -59,7 +57,14 @@ public class Payment extends Booking {
 		totalFair = trainArray.get(selectedTrain).getFarePerKm() * diffDistance;
 		
 		System.out.println("Account Balance: "+User.getUserAccountBalance());
-		System.out.println("Ticket Amount: "+totalFair);	
+		System.out.println("Ticket Amount: "+totalFair);
+		
+		if(paymentStatus)
+		{
+			System.out.println("Payment complete. v-");
+		}
+		else
+			System.out.println("Payment incomplete. X");
 	}
 	private static void debitAmount()
 	{
@@ -68,10 +73,11 @@ public class Payment extends Booking {
 		{
 			User.setUserAccountBalance(balance-totalFair);
 			System.out.println("Payment Successfull.\nAmount debited from account: "+totalFair+"\nAccount balance: "+User.getUserAccountBalance());
+			paymentStatus=true;
 		}
 	}
-	private static void cancelReservation()
-	{
+	private static void cancelPayment()
+	{	
 		System.out.println("Payment Cancelled");
 	}
 

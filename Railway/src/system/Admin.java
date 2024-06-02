@@ -2,6 +2,8 @@ package system;
 
 import java.util.*;
 import Data.Details;
+import Data.Station;
+import Data.Train;
 
 public class Admin extends Details{
 	
@@ -22,7 +24,7 @@ public class Admin extends Details{
                 System.out.println("5. Display Station");
                 System.out.println("6. Display Train");
                 System.out.println("7. Logout");
-                System.out.print("Enter your choice: ");
+                System.out.println("Enter your choice: ");
                 System.out.println("-------------------------");
                 int adminChoice = scanner.nextInt();
 
@@ -30,7 +32,7 @@ public class Admin extends Details{
                 {
                     case 1:
                     	try {
-                    	Details.addStation(scanner);
+                    	addStation(scanner);
                     	}
                     	catch(Exception e)
                     	{
@@ -39,21 +41,21 @@ public class Admin extends Details{
                         break;
 
                     case 2:
-                    	Details.deleteStation(scanner);
+                    	deleteStation(scanner);
                         break;
 
                     case 3:
-                        Details.addTrain(scanner);
+                        addTrain(scanner);
                         break;
 
                     case 4:
-                        Details.deleteTrain(scanner);
+                        deleteTrain(scanner);
                         break;
                     case 5:
-                    	Details.displayStation();
+                    	displayStation();
                     	break;
                     case 6:
-                    	Details.displayTrain();
+                    	displayTrain();
                     	break;
                     case 7:
                         break;
@@ -68,6 +70,87 @@ public class Admin extends Details{
    
             }
         }
+	}
+	private static void addStation(Scanner scanner)
+	{
+		try {
+		System.out.println("Enter station name: ");
+		String stationName = scanner.next();
+		System.out.println("Enter station number: ");
+		String stationNo = scanner.next();
+		System.out.println("Enter station distance from Trivandrum Central(South-Zone Railway): ");
+		double stationDistance = scanner.nextDouble();
+		
+		for(int i=0;i<stationArray.size();i++)
+		{
+			if(stationDistance < stationArray.get(i).stationDistance)
+			{
+				stationArray.add(i, new Station(stationName,stationNo,stationDistance));
+				System.out.println("Station added successfully");
+				break;
+			}
+					
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	private static void deleteStation(Scanner scanner)
+	{
+		System.out.println("Enter station index: ");
+		int stationIndex = Integer.parseInt(scanner.next());
+		stationArray.remove(stationIndex-1);
+		System.out.println("Station removed successfully");
+	}
+	
+	private static void addTrain(Scanner scanner)
+	{
+		System.out.print("Enter train number: ");
+        String trainNumber = scanner.next();
+        System.out.print("Enter train name: ");
+        String trainName = scanner.next();
+        System.out.print("Enter source station: ");
+        String source = scanner.next();
+        System.out.print("Enter destination station: ");
+        String destination = scanner.next();
+        System.out.print("Enter available seats: ");
+        int availableSeats = scanner.nextInt();
+        System.out.print("Enter coach number: ");
+        int coachNumber= scanner.nextInt();
+        System.out.print("Enter fare per km: ");
+        double farePerKm = scanner.nextDouble();
+   
+        
+        String arrivalTimeOne[] = {"NA","5:10 AM","6:00 AM","6:50 AM","7:23 AM","8:25 AM","9:30 AM","10:00 AM","11:00 AM","12:00 PM"};
+		String departureTimeOne[] = {"5:15 AM","6:05 AM","6:55 AM","7:27 AM","8:28 AM","9:33 AM","10:04 AM","11:05 AM","12:05 PM","NA"};
+		String coachSeatsTwo[][] = new String[8][8];
+		char coachTwo[]={'A','B','C','D','E','F','G','H'};
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++)
+			{
+				coachSeatsTwo[i][j]=coachTwo[i]+""+(j+1);
+				System.out.println("Train added successfully");
+			}
+		}
+		
+		try{
+        trainArray.add(new Train(trainNumber, trainName, source, destination, availableSeats, coachNumber, coachSeatsTwo, departureTimeOne, arrivalTimeOne, farePerKm));
+		}
+		catch(Exception gen)
+		{
+			System.out.println("Error! Cannot add train.");
+		}
+        
+	}
+	private static void deleteTrain(Scanner scanner)
+	{
+		System.out.println("Enter train index: ");
+		int trainIndex = scanner.nextInt();
+		trainArray.remove(trainIndex-1);
+		System.out.println("Train removed successfully");
 	}
 }
 

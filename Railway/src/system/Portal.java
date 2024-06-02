@@ -30,11 +30,11 @@ public class Portal {
 	            } else if (choice.equals("2")) {
 	                Booking.bookTicket(scanner);
 	            } else if (choice.equals("3")) {
-	            	Payment.makePayment(scanner);  
+	            	Payment.displayReservation();  
 		        }else if (choice.equals("4")) {
 		        	Feedback.appFeedback(scanner);
 		        }else if (choice.equals("5")) {
-	                System.out.println("Exiting the program. Goodbye!");
+	                System.out.println("Exiting the program. Visit again!");
 	                break;
 	            } else {
 	                System.out.println("Invalid choice. Please try again.");
