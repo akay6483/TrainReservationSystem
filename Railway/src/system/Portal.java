@@ -1,12 +1,17 @@
 package system;
 
 import java.util.Scanner;
+
+import Data.Details;
 import compute.Booking;
 import compute.Payment;
 
 public class Portal {
 	 public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
+	        
+	        Details.initializeData();
+	        
 	        while (true) {
 	            System.out.println("\nMain Menu");
 	            System.out.println("1. Login");

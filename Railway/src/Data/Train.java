@@ -1,19 +1,18 @@
 package Data;
 
 public class Train {
-	 	private int trainNumber;
+	 	private String trainNumber;
 	    private String trainName;
 	    private String source;
 	    private String destination;
 	    private int availableSeats;
 	    private int coachNumber;
 	    private String coachSeats[][];
-	    private boolean stationStop[];
 	    private String departureTime[];
 	    private String arrivalTime[];
 	    private double farePerKm;
 
-	    public Train(int trainNumber, String trainName, String source, String destination, int availableSeats, int coachNumber, String coachSeats[][], boolean stationStop[], String departureTime[], String arrivalTime[], double farePerKm) {
+	    public Train(String trainNumber, String trainName, String source, String destination, int availableSeats, int coachNumber, String coachSeats[][], String departureTime[], String arrivalTime[], double farePerKm) {
 	        this.trainNumber = trainNumber;
 	        this.trainName = trainName;
 	        this.source = source;
@@ -21,17 +20,12 @@ public class Train {
 	        this.availableSeats = availableSeats;
 	        this.coachNumber = coachNumber;
 	        this.coachSeats = coachSeats;
-	        this.stationStop=stationStop;
 	        this.departureTime = departureTime;
 	        this.arrivalTime = arrivalTime;
 	        this.farePerKm = farePerKm;
 	    }
 	    
-	    public boolean[] getStationStop()
-	    {
-	    	return this.stationStop;
-	    }
-	    public int getTrainNumber()
+	    public String getTrainNumber()
 	    {
 	    	return this.trainNumber;
 	    }
@@ -54,6 +48,10 @@ public class Train {
 	    public String getDepartureTime(int no)
 	    {
 	    	return this.departureTime[no+1];
+	    }
+	    public double getFarePerKm()
+	    {
+	    	return this.farePerKm;
 	    }
 	    
 }
