@@ -2,12 +2,11 @@ package compute;
 
 import java.util.*;
 
-import Data.Details;
+
+import Data.TrainReservationSystem;
 
 
-
-
-public class Booking extends Details{
+public class Booking extends TrainReservationSystem{
 	
 	static int choice;
 	static int departureStation;

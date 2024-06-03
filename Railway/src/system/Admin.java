@@ -1,11 +1,12 @@
 package system;
 
 import java.util.*;
-import Data.Details;
+
+import Data.TrainReservationSystem;
 import Data.Station;
 import Data.Train;
 
-public class Admin extends Details{
+public class Admin{
 	
 	private static final String ADMIN_PASSWORD = "admin123";
 	
@@ -52,10 +53,10 @@ public class Admin extends Details{
                         deleteTrain(scanner);
                         break;
                     case 5:
-                    	displayStation();
+                    	TrainReservationSystem.displayStation();
                     	break;
                     case 6:
-                    	displayTrain();
+                    	TrainReservationSystem.displayTrain();
                     	break;
                     case 7:
                         break;
@@ -81,11 +82,11 @@ public class Admin extends Details{
 		System.out.println("Enter station distance from Trivandrum Central(South-Zone Railway): ");
 		double stationDistance = scanner.nextDouble();
 		
-		for(int i=0;i<stationArray.size();i++)
+		for(int i=0;i<TrainReservationSystem.stationArray.size();i++)
 		{
-			if(stationDistance < stationArray.get(i).stationDistance)
+			if(stationDistance < TrainReservationSystem.stationArray.get(i).stationDistance)
 			{
-				stationArray.add(i, new Station(stationName,stationNo,stationDistance));
+				TrainReservationSystem.stationArray.add(i, new Station(stationName,stationNo,stationDistance));
 				System.out.println("Station added successfully");
 				break;
 			}
@@ -102,7 +103,7 @@ public class Admin extends Details{
 	{
 		System.out.println("Enter station index: ");
 		int stationIndex = Integer.parseInt(scanner.next());
-		stationArray.remove(stationIndex-1);
+		TrainReservationSystem.stationArray.remove(stationIndex-1);
 		System.out.println("Station removed successfully");
 	}
 	
@@ -136,7 +137,7 @@ public class Admin extends Details{
 		}
 		
 		try{
-        trainArray.add(new Train(trainNumber, trainName, source, destination, availableSeats, coachNumber, coachSeatsTwo, departureTimeOne, arrivalTimeOne, farePerKm));
+        TrainReservationSystem.trainArray.add(new Train(trainNumber, trainName, source, destination, availableSeats, coachNumber, coachSeatsTwo, departureTimeOne, arrivalTimeOne, farePerKm));
         System.out.println("Train added successfully");
 		}
 		catch(Exception gen)
@@ -149,7 +150,7 @@ public class Admin extends Details{
 	{
 		System.out.println("Enter train index: ");
 		int trainIndex = scanner.nextInt();
-		trainArray.remove(trainIndex-1);
+		TrainReservationSystem.trainArray.remove(trainIndex-1);
 		System.out.println("Train removed successfully");
 	}
 }

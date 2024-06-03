@@ -1,11 +1,9 @@
 package Data;
 
-import java.util.*;
-
 import java.util.ArrayList;
 import system.User;
 
-public class Details {
+public class TrainReservationSystem {
 	
 	public static ArrayList <Station> stationArray = new ArrayList <Station>();
 	public static ArrayList <Train> trainArray = new ArrayList <Train>();
@@ -91,6 +89,3 @@ public class Details {
 	
 
 }
-
-
-
