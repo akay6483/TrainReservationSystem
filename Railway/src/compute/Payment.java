@@ -14,13 +14,16 @@ public class Payment extends Booking {
 		System.out.println("Payment portal");
 		System.out.println("=========================");
         System.out.println("1. Confirm Payment");
-        System.out.println("2. Cancel Payment");
+        System.out.println("2. Show reservation status");
+        System.out.println("3. Cancel");
         System.out.println("=========================");
 		choice = scanner.next();
 		
 		if (choice.equals("1")) {
 			debitAmount();
-        } else if (choice.equals("2")) {
+        }else if (choice.equals("2")) {
+        	displayReservation();
+        } else if (choice.equals("3")) {
         	cancelPayment();
         } else {
         	System.out.println("Invalid choice. Please try again.");

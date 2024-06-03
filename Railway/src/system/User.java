@@ -38,7 +38,7 @@ public class User {
 			 System.out.println("1. Sign In");
 	         System.out.println("2. Sign Up");
 	         System.out.println("3. Back to Main Menu");
-	         System.out.print("Please select an option: ");
+	         System.out.println("Please select an option: ");
 	         String choice = scanner.nextLine();
 	        System.out.println("-------------------------");
 	         

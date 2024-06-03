@@ -108,19 +108,19 @@ public class Admin extends Details{
 	
 	private static void addTrain(Scanner scanner)
 	{
-		System.out.print("Enter train number: ");
+		System.out.println("Enter train number: ");
         String trainNumber = scanner.next();
-        System.out.print("Enter train name: ");
+        System.out.println("Enter train name: ");
         String trainName = scanner.next();
-        System.out.print("Enter source station: ");
+        System.out.println("Enter source station: ");
         String source = scanner.next();
-        System.out.print("Enter destination station: ");
+        System.out.println("Enter destination station: ");
         String destination = scanner.next();
-        System.out.print("Enter available seats: ");
+        System.out.println("Enter available seats: ");
         int availableSeats = scanner.nextInt();
-        System.out.print("Enter coach number: ");
+        System.out.println("Enter coach number: ");
         int coachNumber= scanner.nextInt();
-        System.out.print("Enter fare per km: ");
+        System.out.println("Enter fare per km: ");
         double farePerKm = scanner.nextDouble();
    
         
@@ -132,12 +132,12 @@ public class Admin extends Details{
 			for(int j=0;j<8;j++)
 			{
 				coachSeatsTwo[i][j]=coachTwo[i]+""+(j+1);
-				System.out.println("Train added successfully");
 			}
 		}
 		
 		try{
         trainArray.add(new Train(trainNumber, trainName, source, destination, availableSeats, coachNumber, coachSeatsTwo, departureTimeOne, arrivalTimeOne, farePerKm));
+        System.out.println("Train added successfully");
 		}
 		catch(Exception gen)
 		{

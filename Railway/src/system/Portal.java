@@ -19,8 +19,9 @@ public class Portal {
 	            System.out.println("1. Login");
 	            System.out.println("2. Book Ticket");
 	            System.out.println("3. Reservation Status");
-	            System.out.println("4. Feedback");
-	            System.out.println("5. Exit");
+	            System.out.println("4. Payment Menu");
+	            System.out.println("5. Feedback");
+	            System.out.println("6. Exit");
 	            System.out.println("Please select an option: ");
 	            System.out.println("-------------------------");
 	            String choice = scanner.nextLine();
@@ -32,8 +33,10 @@ public class Portal {
 	            } else if (choice.equals("3")) {
 	            	Payment.displayReservation();  
 		        }else if (choice.equals("4")) {
-		        	Feedback.appFeedback(scanner);
+		        	Payment.makePayment(scanner);
 		        }else if (choice.equals("5")) {
+		        	Feedback.appFeedback(scanner);
+		        }else if (choice.equals("6")) {
 	                System.out.println("Exiting the program. Visit again!");
 	                break;
 	            } else {
